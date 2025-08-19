@@ -16,6 +16,7 @@ import { cacheTask } from "./gulp/tasks/cache.js";
 import { rewrite } from "./gulp/tasks/rewrite.js";
 import { htmlMinify } from "./gulp/tasks/html-minify.js";
 import { zipFiles } from "./gulp/tasks/zip.js";
+import { deploy } from "./gulp/tasks/deploy.js";
 
 global.app = {
   gulp,
@@ -82,5 +83,6 @@ export { build };
 export { backend };
 export { cache };
 export { zip };
+export { deploy };
 
 gulp.task("default", dev);
