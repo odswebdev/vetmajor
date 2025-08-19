@@ -1,0 +1,111 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+
+.hero {
+  background-color: #f8ddae !important;
+  position: relative;
+  overflow: visible; // по горизонтали скрываем
+  margin-bottom: 80px;
+}
+
+.hero h1 {
+  font-family: "Benzin-Bold";
+  font-size: 70px;
+  line-height: 93px;
+  color: #241913;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: -20% !important;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-content-item2 {
+  img {
+    position: relative;
+    max-width: 600px;
+    margin-top: -10%;
+  }
+}
+
+.hero-content-item1 {
+  width: 65%;
+}
+
+.zapis {
+  margin-bottom: 80px;
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 25px;
+}
+
+.advantages-item-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.advantages-item-subtitle {
+  font-size: 14px;
+  color: rgba(36, 25, 19, 70%);
+}
+
+.zapis > a {
+  color: #241913;
+  font-size: 15px;
+  background-color: #ffedcb;
+  padding: 15px 40px;
+}
+
+.otdel-content > h2 {
+  font-family: "Benzin-Bold";
+  font-size: 70px;
+  line-height: 93px;
+  color: #241913;
+}
+
+.center-cont {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 130px;
+}
+
+.center-cont-item {
+  flex: 1 0 50%;
+}
+
+.center-content h2 {
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.center-cont-item-desc {
+  margin-bottom: 45px !important;
+}
+
+.center-cont-item-desc p {
+  font-size: 15px;
+}
+
+.center-cont-item-btn {
+  background-color: #ffedcb;
+  padding: 15px 25px;
+  font-size: 15px;
+  width: 200px;
+  color: #241913;
+}
