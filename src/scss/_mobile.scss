@@ -1,0 +1,144 @@
+@include tablet {
+  .social-group {
+    display: none;
+  }
+
+  .header__content__item2 {
+    display: none !important;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hero-content-item1 {
+    width: 100% !important;
+  }
+
+  .header__logo {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 28px !important;
+    line-height: 30px !important;
+    margin-top: 0px !important;
+  }
+
+  .header__content {
+    margin-bottom: 100px;
+  }
+
+  .hero {
+    background-color: transparent !important;
+  }
+
+  .advantages {
+    display: none !important;
+  }
+
+  .center-content h2 {
+    font-size: 30px !important;
+    text-align: center;
+  }
+
+  .center-content p {
+    text-align: center;
+  }
+
+  .center-cont-item {
+    text-align: center;
+  }
+
+  .otdel-content .otdel-title {
+    font-size: 30px !important;
+    text-align: center;
+  }
+
+  .otdel-cont {
+    flex-direction: column;
+  }
+
+  .otdel-cont-item {
+    width: 100% !important;
+  }
+
+  .history-content .history-title {
+    font-size: 30px !important;
+    text-align: center;
+  }
+
+  .history-cont {
+    flex-direction: column;
+    align-items: center;
+
+    .history-cont-item {
+      p {
+        text-align: center;
+      }
+    }
+
+    .history-cont-item:nth-of-type(2) {
+      display: none;
+    }
+  }
+}
+
+.hero-content {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+
+  @include tablet {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content-item2 {
+    img {
+      /*  width: 100%;
+      height: auto; */
+
+      @include small-tablet {
+        max-width: 300px; // под мобильные экраны
+      }
+    }
+  }
+}
+
+.advantages {
+  display: flex;
+  gap: 30px;
+
+  @include tablet {
+    grid-template-columns: auto !important;
+    gap: 15px;
+  }
+}
+
+.center-cont {
+  display: flex;
+  gap: 50px;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  .center-cont-item {
+    width: 50%;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+
+  @include small-tablet {
+    .swiper-slide {
+      width: 100%;
+    }
+  }
+}

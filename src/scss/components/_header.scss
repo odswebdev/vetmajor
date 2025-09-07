@@ -1,55 +1,59 @@
-// ваш код
 .header {
-  &__logo {
-    font-size: 20px;
-    color: #000000;
-    margin-bottom: 10px;
+  // .header__wrapper
+
+  &__wrapper {
+    margin-top: 20px;
   }
-  .logo__content {
+
+  // .header__top
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .header__logo-wrapper
+
+  &__logo-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .logo__content h1 {
-    margin: 0;
+
+  // .header__logo-link
+
+  &__logo-link {
+    font-size: 20px;
+    color: #000000;
   }
-  &__content {
+
+  // .header__logo-img
+
+  &__logo-img {
+  }
+
+  // .header__logo-title
+
+  &__logo-title {
+    font-family: "Benzin-Medium";
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    color: #000000;
+  }
+
+  // .header__social
+
+  &__social {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-  }
-  .header-logo--desc {
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 10px;
-
-    color: rgba(0, 0, 0, 0.7);
+    align-items: flex-end;
+    gap: 10px;
   }
 
-  .header__content__item2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 45px;
-  }
-}
+  // .header__social-icon
 
-.social-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  .social-icon {
+  &__social-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -87,53 +91,69 @@
       background-image: url("../../img/svg/email.svg");
     }
   }
-}
 
-.phone__button {
-  box-sizing: border-box;
+  // .header__bottom
 
-  border: 1.5px solid rgba(0, 0, 0, 0.5);
-  border-radius: 53px;
-  width: 197px;
-  height: 45px;
-
-  font-size: 14px;
-  line-height: 93px;
-  /* identical to box height, or 664% */
-
-  color: #24191399;
-}
-
-.header-phone {
-  color: rgba(36, 25, 19, 70%);
-}
-
-.menu {
-  margin-bottom: 95px;
-}
-
-.menu > ul {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.menu a {
-  font-family: "Benzin-Regular";
-  color: rgba(36, 25, 19, 70%);
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    color: #fe7;
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
   }
-}
 
-.header-phone {
-  color: rgba(36, 25, 19, 70%);
-  font-size: 14px;
-  padding: 20px 25px;
-  border: 1px solid rgba(36, 25, 19, 70%);
-  border-radius: 53px;
-  width: 197px;
+  &__bottom-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .header__slogan
+
+  &__slogan {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 10px;
+
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  // .header__phone
+
+  &__phone {
+    color: rgba(36, 25, 19, 70%);
+    font-size: 14px;
+    padding: 20px 25px;
+    border: 1px solid rgba(36, 25, 19, 70%);
+    border-radius: 53px;
+    width: 197px;
+  }
+
+  // .header__menu
+
+  &__menu {
+    margin-bottom: 100px;
+  }
+
+  // .header__menu-list
+
+  &__menu-list {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  // .header__menu-item
+
+  &__menu-item {
+    &__menu-link {
+      font-family: "Benzin-Regular";
+      color: rgba(36, 25, 19, 60%);
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        color: #fe7;
+      }
+    }
+  }
 }

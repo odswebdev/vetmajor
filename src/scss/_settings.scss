@@ -6,7 +6,7 @@
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: $font-family, sans-serif;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
@@ -77,8 +77,8 @@ a {
 
 .container {
   margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
+  padding: 0 $container-offset;
+  max-width: $container-width;
 }
 
 .centered {

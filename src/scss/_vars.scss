@@ -1,20 +1,12 @@
-// если вы хотите использовать sass-переменные - удалите root
-// colors
-:root {
-  // base
-  --font-family: "Benzin-Regular";
-  --content-width: 1170px;
-  --container-offset: 15px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-
-  // colors
-  --light-color: #fff;
-  --bg-col-body: #eed198;
-}
-
+$font-main: "Benzin-Regular";
+$font-family: "Benzin-Regular";
+$content-width: 1170px;
+$container-offset: 15px;
+$container-width: calc(($content-width + $container-offset) * 2);
 $primary-color: #e2c68d;
 $text-color: #000;
-$font-main: "Benzin-Regular";
+$light-color: #fff;
+$bg-col-body: #eed198;
 
 *,
 *::before,
@@ -35,11 +27,10 @@ button {
   background: none;
   cursor: pointer;
 }
-
 body {
   font-family: $font-main;
   color: $text-color;
-  background-color: var(--bg-col-body);
+  background-color: $bg-col-body;
   line-height: 1.4;
 }
 .container {

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+    <div class="site-container">
+        @include('partials/header.html')
+        <main class="main">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__content">
+                        <div class="hero__content-item">
+                            <h1 class="hero__title">Ветеринарный центр</h1>
+                            <div class="hero__record">
+                                <a href="#" class="hero__record-link">Записаться</a>
+                                <div class="hero__record-content">
+                                    <div class="hero__record-bg1">
+                                        <div class="hero__record-bg2">
+                                            <img src="./img/svg/play.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="hero__record-text">
+                                        <span class="hero__record-desc-item">О нас за пару минут</span>
+                                        <span class="hero__record-desc-item">2:32</span>
+                                    </div>
+                                </div>
+                                <!-- <a href="#">!</a>
+                <span class="hero__record-desc-item">О нас за пару минут</span>
+                <span class="hero__record-desc-item">2:32</span> -->
+                            </div>
+                            <div class="hero__advantages">
+                                <div class="hero__advantages-item">
+                                    <div class="hero__adv-item-title">7 лет</div>
+                                    <div class="hero__adv-item-subtitle">Заботимся о здоровье животных</div>
+                                </div>
+                                <div class="hero__advantages-item">
+                                    <div class="hero__adv-item-title">>500</div>
+                                    <div class="hero__adv-item-subtitle">Заботимся о здоровье животных</div>
+                                </div>
+                                <div class="hero__advantages-item">
+                                    <div class="hero__adv-item-title">90%</div>
+                                    <div class="hero__adv-item-subtitle">Заботимся о здоровье животных</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__content-item">
+                            <img src="./img/dogAndCat.png" class="hero__img" alt="Собаки и кот">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services">
+                <div class="container">
+                    <div class="services__content">
+                        <h2 class="services__title">Услуги</h2>
+
+                        <div class="services__wrapper">
+                            <div class="services__content-item">
+                                <h3 class="services__item-title">Прием и консультация</h3>
+                                <div class="services__item-inner">
+                                    <div class="services__item-left">
+                                        <div class="services__item-img"><img src="./img/dog-labrador.png" alt="Собака">
+                                        </div>
+                                    </div>
+                                    <a href="#" class="services__item-link"></a>
+                                </div>
+
+                            </div>
+                            <div class="services__content-item">
+                                <h3 class="services__item-title">Вакцинация</h3>
+                                <div class="services__item-inner">
+                                    <div class="services__item-img"><img src="./img/cat.png" alt="Собака"></div>
+                                    <a href="#" class="services__item-link"></a>
+                                </div>
+                            </div>
+                            <div class="services__content-item">
+                                <h3 class="services__item-title">Хирургия</h3>
+                                <div class="services__item-inner">
+                                    <div class="services__item-img"><img src="./img/dog.png" alt="Собака"></div>
+                                    <a href="#" class="services__item-link"></a>
+                                </div>
+                            </div>
+                            <div class="services__content-item">
+                                <h3 class="services__item-title">Кастрация и стерилизация</h3>
+                                <div class="services__item-inner">
+                                    <div class="services__item-img"><img src="./img/castraciya.png" alt="Собака"></div>
+                                    <a href="#" class="services__item-link"></a>
+                                </div>
+                            </div>
+                            <div class="services__content-item">
+                                <h3 class="services__item-title">Стационар</h3>
+                                <div class="services__item-inner">
+                                    <div class="services__item-img"><img src="./img/stacionar.png" alt="Собака"></div>
+                                    <a href="#" class="services__item-link"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @include('partials/footer.html')
+        <!-- @include('html/h1.html') пример include -->
+    </div>
+</body>
+
+</html>

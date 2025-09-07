@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import browserSync from "browser-sync";
 
+import { swiperCss } from "./gulp/tasks/swiper-css.js";
 import { paths } from "./gulp/config/paths.js";
 import { clean } from "./gulp/tasks/clean.js";
 import { svgSprites } from "./gulp/tasks/sprite.js";
@@ -49,6 +50,7 @@ const dev = gulp.series(
   scripts,
   styles,
   resources,
+  swiperCss,
   images,
   webpImages,
   svgSprites,
@@ -69,6 +71,7 @@ const build = gulp.series(
   htmlInclude,
   scripts,
   styles,
+  swiperCss,
   resources,
   images,
   webpImages,
