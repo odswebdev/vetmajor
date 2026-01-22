@@ -1,7 +1,8 @@
 {
-  "name": "gulp-builder",
+  "name": "vetmajor",
   "version": "3.0.0",
-  "description": "gulp-builder for weblayout",
+  "homepage": "https://odswebdev.github.io/vetmajor",
+  "description": "vetmajor for weblayout",
   "type": "module",
   "scripts": {
     "stylelint": "npx stylelint **/*.scss",
@@ -14,7 +15,7 @@
     "zip": "gulp zip --build",
     "deploy": "gulp build --build && gulp deploy"
   },
-  "author": "MaxGraph",
+  "author": "DmitryOrlov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.4",
