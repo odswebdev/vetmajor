@@ -1247,22 +1247,22 @@ template {
 .header__social-icon--html {
   border: 1px solid #2a2a2b;
   background-color: transparent;
-  background-image: url("img/svg/telegram.svg");
+  background-image: url("../img/svg/telegram.svg");
 }
 .header__social-icon--sass {
   border: 1px solid #2a2a2b;
   background-color: transparent;
-  background-image: url("img/svg/people.svg");
+  background-image: url("../img/svg/people.svg");
 }
 .header__social-icon--wa {
   border: 1px solid #2a2a2b;
   background-color: transparent;
-  background-image: url("img/svg/whatsapp.svg");
+  background-image: url("../img/svg/whatsapp.svg");
 }
 .header__social-icon--gulp {
   border: 1px solid #2a2a2b;
   background-color: transparent;
-  background-image: url("img/svg/email.svg");
+  background-image: url("../img/svg/email.svg");
 }
 .header__bottom {
   display: -webkit-box;
