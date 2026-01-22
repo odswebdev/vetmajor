@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+
+      <!-- Хлебные крошки -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <nav class="breadcrumbs__nav">
+            <a href="#" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Услуги</a>
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Чек-ап</span>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Секция с чек-апами -->
+      <section class="checkup-page">
+        <div class="container">
+          <div class="checkup-page__header">
+            <h1 class="checkup-page__title">Чек-ап</h1>
+            <p class="checkup-page__subtitle">Комплексные обследования для ранней диагностики заболеваний</p>
+          </div>
+
+          <!-- Программы обследований -->
+          <div class="checkup-programs">
+            <!-- Программа 1: Стоматология -->
+            <div class="checkup-program">
+              <div class="checkup-program__header">
+                <h2 class="checkup-program__title">Стоматологическое обследование + санация ротовой полости</h2>
+                <div class="checkup-program__price">12 500₽</div>
+              </div>
+              <div class="checkup-program__content">
+                <div class="checkup-program__description">
+                  <p>Полное обследование зубов и десен животного с последующей профессиональной чисткой и санацией ротовой полости.</p>
+                  <ul class="checkup-program__features">
+                    <li>Осмотр стоматолога</li>
+                    <li>Ультразвуковая чистка зубов</li>
+                    <li>Полировка эмали</li>
+                    <li>Обработка десен</li>
+                    <li>Консультация по домашнему уходу</li>
+                  </ul>
+                </div>
+                <a href="#" class="checkup-program__button">Записаться на обследование</a>
+              </div>
+            </div>
+
+            <!-- Программа 2: Кардио -->
+            <div class="checkup-program">
+              <div class="checkup-program__header">
+                <h2 class="checkup-program__title">Кардиологическое обследование</h2>
+                <div class="checkup-program__price">15 375₽</div>
+              </div>
+              <div class="checkup-program__content">
+                <div class="checkup-program__description">
+                  <p>Обследование позволяет провести диагностику и профилактику бессимптомно протекающих заболеваний сердечно-сосудистой системы, а также своевременно выявить риск их развития.</p>
+                  <ul class="checkup-program__features">
+                    <li>Консультация кардиолога</li>
+                    <li>Эхокардиография (УЗИ сердца)</li>
+                    <li>Электрокардиограмма (ЭКГ)</li>
+                    <li>Измерение артериального давления</li>
+                    <li>Анализы крови (биохимия, тропонины)</li>
+                  </ul>
+                </div>
+                <a href="#" class="checkup-program__button">Записаться на обследование</a>
+              </div>
+            </div>
+
+            <!-- Программа 3: Мочевыделительная система -->
+            <div class="checkup-program">
+              <div class="checkup-program__header">
+                <h2 class="checkup-program__title">Обследование мочевыделительной системы</h2>
+                <div class="checkup-program__price">12 300₽</div>
+              </div>
+              <div class="checkup-program__content">
+                <div class="checkup-program__description">
+                  <p>Комплексная диагностика состояния почек, мочевого пузыря и мочевыводящих путей.</p>
+                  <ul class="checkup-program__features">
+                    <li>УЗИ почек и мочевого пузыря</li>
+                    <li>Анализ мочи (общий и по Нечипоренко)</li>
+                    <li>Биохимический анализ крови</li>
+                    <li>Консультация нефролога</li>
+                    <li>Измерение артериального давления</li>
+                  </ul>
+                </div>
+                <a href="#" class="checkup-program__button">Записаться на обследование</a>
+              </div>
+            </div>
+
+            <!-- Программа 4: Профилактика диабета -->
+            <div class="checkup-program">
+              <div class="checkup-program__header">
+                <h2 class="checkup-program__title">Профилактика сахарного диабета</h2>
+                <div class="checkup-program__price">7 400₽</div>
+              </div>
+              <div class="checkup-program__content">
+                <div class="checkup-program__description">
+                  <p>Программа позволит обследовать питомца и выявить заболевание, либо риск возникновения сахарного диабета.</p>
+                  <ul class="checkup-program__features">
+                    <li>Измерение уровня глюкозы</li>
+                    <li>Тест на гликированный гемоглобин</li>
+                    <li>Анализ на фруктозамин</li>
+                    <li>Консультация эндокринолога</li>
+                    <li>Рекомендации по профилактике</li>
+                  </ul>
+                </div>
+                <a href="#" class="checkup-program__button">Записаться на обследование</a>
+              </div>
+            </div>
+
+            <!-- Программа 5: Комплексное обследование -->
+            <div class="checkup-program checkup-program--featured">
+              <div class="checkup-program__badge">Популярно</div>
+              <div class="checkup-program__header">
+                <h2 class="checkup-program__title">Комплексное обследование «Здоровый питомец»</h2>
+                <div class="checkup-program__price">14 825₽</div>
+              </div>
+              <div class="checkup-program__content">
+                <div class="checkup-program__description">
+                  <p>Полное обследование всех систем организма для выявления скрытых заболеваний и оценки общего состояния здоровья.</p>
+                  <ul class="checkup-program__features">
+                    <li>Общий и биохимический анализ крови</li>
+                    <li>Анализ мочи и кала</li>
+                    <li>УЗИ брюшной полости</li>
+                    <li>ЭКГ и измерение давления</li>
+                    <li>Осмотр терапевта и узких специалистов</li>
+                    <li>Консультация по результатам</li>
+                  </ul>
+                </div>
+                <a href="#" class="checkup-program__button checkup-program__button--primary">Выбрать программу</a>
+              </div>
+            </div>
+
+            <!-- Программа 6: Статистика -->
+            <div class="checkup-program">
+              <div class="checkup-program__header">
+                <h2 class="checkup-program__title">Медицинская статистика и мониторинг</h2>
+                <div class="checkup-program__price">12 300₽</div>
+              </div>
+              <div class="checkup-program__content">
+                <div class="checkup-program__description">
+                  <p>Программа для владельцев, которые хотят вести постоянный мониторинг здоровья питомца и иметь полную медицинскую историю.</p>
+                  <ul class="checkup-program__features">
+                    <li>Ежегодное полное обследование</li>
+                    <li>Электронная медицинская карта</li>
+                    <li>Напоминания о вакцинации</li>
+                    <li>Консультации по телефону</li>
+                    <li>Скидки на последующие обследования</li>
+                  </ul>
+                </div>
+                <a href="#" class="checkup-program__button">Записаться на обследование</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Преимущества -->
+          <div class="checkup-benefits">
+            <h2 class="checkup-benefits__title">Почему важны регулярные чек-апы?</h2>
+            <div class="checkup-benefits__grid">
+              <div class="benefit-card">
+                <div class="benefit-card__icon">🔍</div>
+                <h3 class="benefit-card__title">Ранняя диагностика</h3>
+                <p class="benefit-card__text">Выявление заболеваний на ранних стадиях, когда они лучше поддаются лечению</p>
+              </div>
+              
+              <div class="benefit-card">
+                <div class="benefit-card__icon">💰</div>
+                <h3 class="benefit-card__title">Экономия средств</h3>
+                <p class="benefit-card__text">Профилактика дешевле лечения запущенных заболеваний</p>
+              </div>
+              
+              <div class="benefit-card">
+                <div class="benefit-card__icon">❤️</div>
+                <h3 class="benefit-card__title">Долгая жизнь</h3>
+                <p class="benefit-card__text">Регулярные обследования продлевают жизнь питомца на 20-30%</p>
+              </div>
+              
+              <div class="benefit-card">
+                <div class="benefit-card__icon">📊</div>
+                <h3 class="benefit-card__title">Контроль здоровья</h3>
+                <p class="benefit-card__text">Возможность отслеживать динамику показателей здоровья</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA секция -->
+          <div class="checkup-cta">
+            <div class="checkup-cta__content">
+              <h2 class="checkup-cta__title">Не знаете, какое обследование выбрать?</h2>
+              <p class="checkup-cta__text">Наши специалисты помогут подобрать оптимальную программу чек-апа для вашего питомца с учетом возраста, породы и состояния здоровья</p>
+              <div class="checkup-cta__buttons">
+                <a href="tel:+78001234567" class="checkup-cta__button checkup-cta__button--phone">
+                  <span class="checkup-cta__button-icon">📞</span>
+                  Позвонить для консультации
+                </a>
+                <a href="#" class="checkup-cta__button checkup-cta__button--record">Записаться онлайн</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+</html>

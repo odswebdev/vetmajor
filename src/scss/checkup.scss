@@ -1,0 +1,630 @@
+.service-page,
+.checkup-page {
+  padding: 40px 0 80px;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Стили для страницы кастрации
+.service-info {
+  margin-bottom: 60px;
+
+  &__card {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid #e6e9ff;
+  }
+
+  &__card-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    color: #4a6cf7;
+    font-weight: bold;
+    font-size: 18px;
+    min-width: 20px;
+  }
+}
+
+// Карточки с ценами
+.pricing {
+  margin-bottom: 80px;
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid transparent;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  &--red {
+    border-top-color: #ff4757;
+  }
+
+  &--green {
+    border-top-color: #2ed573;
+  }
+
+  &--blue {
+    border-top-color: #3742fa;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    &--red {
+      background: #ff4757;
+    }
+
+    &--green {
+      background: #2ed573;
+    }
+
+    &--blue {
+      background: #3742fa;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+  }
+
+  &__price {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex: 1;
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4a6cf7;
+        font-weight: bold;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #4a6cf7;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: #3a5ce5;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// FAQ секция
+.faq-section {
+  margin-top: 80px;
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+  }
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__question {
+    width: 100%;
+    padding: 20px 0;
+    text-align: left;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #4a6cf7;
+    }
+
+    &[aria-expanded="true"] {
+      .faq-item__icon {
+        &::before {
+          content: '−';
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2ff;
+    border-radius: 50%;
+    color: #4a6cf7;
+    font-weight: bold;
+    font-size: 18px;
+
+    &::before {
+      content: '+';
+    }
+  }
+
+  &__answer {
+    padding: 0 0 20px 39px;
+    display: none;
+
+    p {
+      margin: 0;
+      color: #555;
+      line-height: 1.7;
+    }
+  }
+
+  &.active &__answer {
+    display: block;
+  }
+}
+
+// Стили для страницы чек-апа
+.checkup-programs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.checkup-program {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  &--featured {
+    border: 2px solid #4a6cf7;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  }
+
+  &__badge {
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    background: #4a6cf7;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4a6cf7;
+    white-space: nowrap;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__description {
+    p {
+      margin: 0 0 15px 0;
+      color: #555;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #4a6cf7;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #4a6cf7;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+    text-align: center;
+    align-self: flex-start;
+
+    &:hover {
+      background: #3a5ce5;
+      transform: translateY(-2px);
+    }
+
+    &--primary {
+      background: #ff6b6b;
+      
+      &:hover {
+        background: #ff5252;
+      }
+    }
+  }
+}
+
+.checkup-benefits {
+  margin: 80px 0;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  border-radius: 20px;
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  &__text {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.checkup-cta {
+  background: linear-gradient(135deg, #4a6cf7 0%, #3a5ce5 100%);
+  border-radius: 20px;
+  padding: 50px;
+  color: white;
+  text-align: center;
+
+  &__content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+
+    &--phone {
+      background: white;
+      color: #4a6cf7;
+
+      &:hover {
+        background: #f8f9ff;
+        transform: translateY(-2px);
+      }
+    }
+
+    &--record {
+      background: #ff6b6b;
+      color: white;
+
+      &:hover {
+        background: #ff5252;
+        transform: translateY(-2px);
+      }
+    }
+
+    &-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 992px) {
+  .service-page__title,
+  .checkup-page__title {
+    font-size: 36px;
+  }
+
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .checkup-program__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkup-program__price {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-page,
+  .checkup-page {
+    padding: 30px 0 60px;
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+  }
+
+  .service-info__card {
+    padding: 25px;
+  }
+
+  .pricing__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkup-program {
+    padding: 25px;
+
+    &__features {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .checkup-cta {
+    padding: 30px 20px;
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__buttons {
+      flex-direction: column;
+    }
+
+    &__button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .pricing-card {
+    padding: 20px;
+  }
+
+  .checkup-benefits__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-item__question {
+    font-size: 16px;
+  }
+
+  .faq-item__answer {
+    padding-left: 30px;
+    font-size: 15px;
+  }
+}

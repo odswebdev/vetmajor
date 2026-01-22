@@ -4,7 +4,6 @@ import Swiper from "swiper";
 import { Pagination, Navigation, Mousewheel } from "swiper/modules";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Инициализация Swiper (если нужен)
   const swiper = new Swiper(".center__swiper", {
     loop: false,
     slidesPerView: 1,
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerView: "auto",
     spaceBetween: 30,
     mousewheel: {
-      forceToAxis: true, // прокрутка только по горизонтали
+      forceToAxis: true,
     },
     pagination: {
       el: ".swiper-pagination",
@@ -44,9 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slidesWrapper = slider.querySelector(".history__slides");
   const slides = Array.from(slidesWrapper.querySelectorAll(".history__slide"));
 
-  // собираем все точки (любое место в слайдере, где есть data-slide)
   const allDots = Array.from(slider.querySelectorAll("[data-slide]"));
-  // группируем точки по индексу (поддерживает несколько одинаковых точек)
   const dotsMap = new Map();
   allDots.forEach((dot) => {
     const idx = Number(dot.dataset.slide);
@@ -59,17 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let isPointerDown = false;
   let startX = 0;
-  let prevTranslate = 0; // translate в px до начала драга
-  let currentTranslate = 0; // текущий translate во время драга
+  let prevTranslate = 0;
+  let currentTranslate = 0;
   let lastWheelTime = 0;
 
-  // ensure slides layout: each slide = width контейнера
   function updateLayout() {
-    // при ресайзе возвращаемся на текущий слайд
     goToSlide(currentIndex, true);
   }
 
-  // применить transform: переводим контейнер на нужную позицию
   function setTranslate(px, withTransition = true) {
     slidesWrapper.style.transition = withTransition
       ? "transform 0.32s ease"
@@ -84,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateActiveClasses() {
     slides.forEach((s, i) => s.classList.toggle("active", i === currentIndex));
 
-    // убираем и ставим класс active для всех точек
     const allKeys = Array.from(dotsMap.keys());
     allKeys.forEach((key) => {
       const nodes = dotsMap.get(key) || [];
@@ -94,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // основной переход к слайду
   function goToSlide(index, instant = false) {
     index = clampIndex(index);
     currentIndex = index;
@@ -105,11 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveClasses();
   }
 
-  // --- POINTER (mouse/touch unified) ---
   function onPointerDown(e) {
     isPointerDown = true;
     startX = e.clientX || e.touches?.[0]?.clientX;
-    prevTranslate = currentTranslate; // текущая позиция перед началом
+    prevTranslate = currentTranslate; 
     slidesWrapper.style.transition = "none";
     slider.classList.add("grabbing");
   }
@@ -119,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const clientX = e.clientX || e.touches?.[0]?.clientX;
     const dx = clientX - startX;
     currentTranslate = prevTranslate + dx;
-    // ограничим смещение, чтобы нельзя было сильно тянуть в пустоту
     const maxTranslate = 0;
     const minTranslate = -(slideCount - 1) * slider.offsetWidth;
     if (currentTranslate > maxTranslate + 100)
@@ -135,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.classList.remove("grabbing");
 
     const moved = currentTranslate - prevTranslate;
-    const threshold = slider.offsetWidth * 0.2; // порог перелистывания
+    const threshold = slider.offsetWidth * 0.2;
     if (moved < -threshold && currentIndex < slideCount - 1) {
       currentIndex++;
     } else if (moved > threshold && currentIndex > 0) {
@@ -144,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     goToSlide(currentIndex);
   }
 
-  // --- WHEEL (with small throttle) ---
   function onWheel(e) {
     e.preventDefault();
     const now = Date.now();
@@ -158,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --- dots click handlers (support many nodes per index) ---
   dotsMap.forEach((nodes, idx) => {
     nodes.forEach((node) => {
       node.addEventListener("click", (ev) => {
@@ -168,8 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- слушатели pointer / touch / mouse ---
-  // pointer events (лучше) если поддерживаются:
   if (window.PointerEvent) {
     slidesWrapper.addEventListener("pointerdown", onPointerDown);
     window.addEventListener("pointermove", onPointerMove);
@@ -187,16 +173,56 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("touchend", onPointerUp);
   }
 
-  // wheel
   slider.addEventListener("wheel", onWheel, { passive: false });
 
-  // ресайз: пересчитать позицию
   window.addEventListener("resize", () => {
     goToSlide(currentIndex, true);
   });
 
-  // инициализация: убедимся, что style выставлен
-  // Убедись что в SCSS .history__slide имеет flex: 0 0 100%
   setTranslate(0, true);
   goToSlide(0, true);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const faqQuestions = document.querySelectorAll('.faq-item__question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const faqItem = this.closest('.faq-item');
+      const answer = faqItem.querySelector('.faq-item__answer');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      document.querySelectorAll('.faq-item__question[aria-expanded="true"]').forEach(openQuestion => {
+        if (openQuestion !== this) {
+          openQuestion.setAttribute('aria-expanded', 'false');
+          openQuestion.closest('.faq-item').classList.remove('active');
+        }
+      });
+      
+      this.setAttribute('aria-expanded', !isExpanded);
+      faqItem.classList.toggle('active');
+      
+      if (!isExpanded) {
+        answer.style.display = 'block';
+        answer.style.height = 'auto';
+        const height = answer.offsetHeight;
+        answer.style.height = '0';
+        answer.offsetHeight;
+        answer.style.height = height + 'px';
+        
+        setTimeout(() => {
+          answer.style.height = 'auto';
+        }, 300);
+      } else {
+        answer.style.height = answer.offsetHeight + 'px';
+        answer.offsetHeight;
+        answer.style.height = '0';
+        
+        setTimeout(() => {
+          answer.style.display = 'none';
+        }, 300);
+      }
+    });
+  });
 });

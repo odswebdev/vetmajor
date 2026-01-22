@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+
+      <!-- Хлебные крошки -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <nav class="breadcrumbs__nav">
+            <a href="#" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Услуги</a>
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Кастрация</span>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Секция с услугами кастрации -->
+      <section class="service-page">
+        <div class="container">
+          <div class="service-page__header">
+            <h1 class="service-page__title">Кастрация</h1>
+            <p class="service-page__subtitle">Безопасные операции с гарантией качества</p>
+          </div>
+
+          <!-- Информационный блок -->
+          <div class="service-info">
+            <div class="service-info__card">
+              <h2 class="service-info__card-title">Что включено в стоимость?</h2>
+              <ul class="service-info__list">
+                <li class="service-info__item">
+                  <span class="service-info__icon">✓</span>
+                  <span>В стоимость включены все лекарства</span>
+                </li>
+                <li class="service-info__item">
+                  <span class="service-info__icon">✓</span>
+                  <span>Операции с финансовой ответственностью клиники за жизнь животного при проведении операции (100 000 рублей)</span>
+                </li>
+                <li class="service-info__item">
+                  <span class="service-info__icon">✓</span>
+                  <span>Операция с гарантией на бесплатное лечение послеоперационных осложнений</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Цены на услуги -->
+          <div class="pricing">
+            <h2 class="pricing__title">Стоимость операций</h2>
+            
+            <div class="pricing__grid">
+              <!-- Кастрация котов -->
+              <div class="pricing-card pricing-card--red">
+                <div class="pricing-card__header">
+                  <div class="pricing-card__icon pricing-card__icon--red"></div>
+                  <h3 class="pricing-card__title">Кастрация котов</h3>
+                </div>
+                <div class="pricing-card__price">1 000₽</div>
+                <ul class="pricing-card__features">
+                  <li>Предоперационное обследование</li>
+                  <li>Анестезия</li>
+                  <li>Операция</li>
+                  <li>Послеоперационный уход</li>
+                  <li>Все необходимые лекарства</li>
+                </ul>
+                <a href="#" class="pricing-card__button">Записаться</a>
+              </div>
+
+              <!-- Кастрация хорьков -->
+              <div class="pricing-card pricing-card--green">
+                <div class="pricing-card__header">
+                  <div class="pricing-card__icon pricing-card__icon--green"></div>
+                  <h3 class="pricing-card__title">Кастрация хорьков 1-9 кг</h3>
+                </div>
+                <div class="pricing-card__price">9 200₽</div>
+                <ul class="pricing-card__features">
+                  <li>Полное обследование</li>
+                  <li>Специализированная анестезия</li>
+                  <li>Операция опытным хирургом</li>
+                  <li>Послеоперационный стационар</li>
+                  <li>Контрольный осмотр через 3 дня</li>
+                </ul>
+                <a href="#" class="pricing-card__button">Записаться</a>
+              </div>
+
+              <!-- Собака маленькая -->
+              <div class="pricing-card pricing-card--blue">
+                <div class="pricing-card__header">
+                  <div class="pricing-card__icon pricing-card__icon--blue"></div>
+                  <h3 class="pricing-card__title">Кастрация собак мелких пород 1-9кг</h3>
+                </div>
+                <div class="pricing-card__price">13 800₽</div>
+                <ul class="pricing-card__features">
+                  <li>Расширенное обследование</li>
+                  <li>Индивидуальный наркоз</li>
+                  <li>Операция под контролем анестезиолога</li>
+                  <li>Двухдневный стационар</li>
+                  <li>Послеоперационное сопровождение</li>
+                </ul>
+                <a href="#" class="pricing-card__button">Записаться</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ секция -->
+          <div class="faq-section">
+            <h2 class="faq-section__title">Частые вопросы о кастрации</h2>
+            
+            <div class="faq-accordion">
+              <!-- Вопрос 1 -->
+              <div class="faq-item">
+                <button class="faq-item__question" aria-expanded="false">
+                  <span class="faq-item__icon">+</span>
+                  <span>Что такое кастрация?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Это операция по удалению репродуктивных органов, которые отвечают за размножение. У самцов удаляются семенники, у самок — яичники и часто матка.</p>
+                </div>
+              </div>
+
+              <!-- Вопрос 2 -->
+              <div class="faq-item">
+                <button class="faq-item__question" aria-expanded="false">
+                  <span class="faq-item__icon">—</span>
+                  <span>Зачем нужна кастрация?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Кастрация помогает предотвратить нежелательное потомство, снижает риск онкологических заболеваний репродуктивной системы, устраняет проблемы поведения, связанные с половыми инстинктами.</p>
+                </div>
+              </div>
+
+              <!-- Вопрос 3 -->
+              <div class="faq-item">
+                <button class="faq-item__question" aria-expanded="false">
+                  <span class="faq-item__icon">+</span>
+                  <span>В каком возрасте лучше делать кастрацию?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Оптимальный возраст для кастрации — 6-9 месяцев для котов и 6-12 месяцев для собак. Однако операция может быть выполнена и в более взрослом возрасте после тщательного обследования.</p>
+                </div>
+              </div>
+
+              <!-- Вопрос 4 -->
+              <div class="faq-item">
+                <button class="faq-item__question" aria-expanded="false">
+                  <span class="faq-item__icon">+</span>
+                  <span>Как проходит восстановление после операции?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Восстановление занимает 7-10 дней. В первые дни важно ограничить активность животного, носить защитный воротник для предотвращения разлизывания швов, давать назначенные врачом препараты.</p>
+                </div>
+              </div>
+
+              <!-- Вопрос 5 -->
+              <div class="faq-item">
+                <button class="faq-item__question" aria-expanded="false">
+                  <span class="faq-item__icon">+</span>
+                  <span>Есть ли риски при кастрации?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Как и при любой операции, существуют минимальные риски, связанные с анестезией. Однако в нашей клинике все операции проводятся под контролем опытного анестезиолога с современным оборудованием для мониторинга.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+</html>

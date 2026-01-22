@@ -7,49 +7,7 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      <section class="hero">
-        <div class="container">
-          <div class="hero__content">
-            <div class="hero__content-item">
-              <h1 class="hero__title">Ветеринарный центр</h1>
-              <div class="hero__record">
-                <a href="#" class="hero__record-link">Записаться</a>
-                <div class="hero__record-content">
-                  <div class="hero__record-bg1">
-                    <div class="hero__record-bg2">
-                      <img src="./img/svg/play.svg" alt="">
-                    </div>
-                  </div>
-                  <div class="hero__record-text">
-                    <span class="hero__record-desc-item">О нас за пару минут</span>
-                    <span class="hero__record-desc-item">2:32</span>
-                  </div>
-                </div>
-                <!-- <a href="#">!</a>
-                <span class="hero__record-desc-item">О нас за пару минут</span>
-                <span class="hero__record-desc-item">2:32</span> -->
-              </div>
-              <div class="hero__advantages">
-                <div class="hero__advantages-item">
-                  <div class="hero__adv-item-title">7 лет</div>
-                  <div class="hero__adv-item-subtitle">Заботимся о здоровье животных</div>
-                </div>
-                <div class="hero__advantages-item">
-                  <div class="hero__adv-item-title">>500</div>
-                  <div class="hero__adv-item-subtitle">Заботимся о здоровье животных</div>
-                </div>
-                <div class="hero__advantages-item">
-                  <div class="hero__adv-item-title">90%</div>
-                  <div class="hero__adv-item-subtitle">Заботимся о здоровье животных</div>
-                </div>
-              </div>
-            </div>
-            <div class="hero__content-item">
-              <img src="./img/dogAndCat.png" class="hero__img" alt="Собаки и кот">
-            </div>
-          </div>
-        </div>
-      </section>
+      @include('partials/hero.html')
 
       <section class="center">
         <div class="container">
@@ -58,17 +16,18 @@
 
             <div class="center__slider">
 
-              <!-- Описание -->
               <div class="center__slide">
+
+              <h3 class="otdel-cont-item-title">Наша галерея</h3>
+
                 <div class="center__slide-desc">
                   <p>
                     Моменты связанные с нашим ветеринарным центром, наше помещение и многое другое
                   </p>
                 </div>
-                <a href="#" class="center__slide-link">История</a>
+                <a href="history.html" class="center__slide-link">История</a>
               </div>
 
-              <!-- Слайдер -->
               <div class="center__slide">
                 <div class="swiper center__swiper">
                   <div class="swiper-wrapper">
@@ -82,7 +41,6 @@
                       <img src="./img/centr03.png" alt="Центр 3" />
                     </div>
                   </div>
-                  <!-- пагинация -->
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
@@ -151,7 +109,6 @@
 
     </main>
     @include('partials/footer.html')
-    <!-- @include('html/h1.html') пример include -->
   </div>
 </body>
 

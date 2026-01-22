@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+
+      <!-- Хлебные крошки -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <nav class="breadcrumbs__nav">
+            <a href="#" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Врачи</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Секция с чек-апами -->
+      <section class="checkup-page">
+        <div class="container">
+          <div class="checkup-page__header">
+            <h1 class="checkup-page__title">Врачи и специалисты ветеринарной клиники</h1>
+          </div>
+
+            <div class="experts__slider">
+              <div class="swiper experts__swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="experts__item">
+                      <div class="experts__item-img">
+                        <img src="./img/experts.png" class="experts__img" alt="Специалист 1" />
+                      </div>
+                      <div class="experts__item-content">
+                        <h3 class="experts__name">Шалимов Денис Андреевич</h3>
+                        <p class="experts__position">Заведующий терапевтическим отделением, ветеринарный врач-терапевт,
+                          дерматолог</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="experts__item">
+                      <div class="experts__item-img">
+                        <img src="./img/experts.png" class="experts__img" alt="Специалист 2" />
+                      </div>
+                      <div class="experts__item-content">
+                        <h3 class="experts__name">Иванова Мария Сергеевна</h3>
+                        <p class="experts__position">Ветеринарный хирург, специалист по экзотическим животным</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="experts__item">
+                      <div class="experts__item-img">
+                        <img src="./img/experts.png" class="experts__img" alt="Специалист 3" />
+                      </div>
+                      <div class="experts__item-content">
+                        <h3 class="experts__name">Петров Алексей Владимирович</h3>
+                        <p class="experts__position">Ветеринарный терапевт, консультант по питанию животных</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+</html>
