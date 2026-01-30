@@ -226,3 +226,213 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Функционал для страницы хирургии
+document.addEventListener('DOMContentLoaded', function() {
+  // Аккордеон FAQ
+  const faqQuestions = document.querySelectorAll('.faq-item__question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      
+      // Закрываем все открытые элементы
+      document.querySelectorAll('.faq-item.active').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+        }
+      });
+      
+      // Переключаем текущий элемент
+      faqItem.classList.toggle('active');
+    });
+  });
+  
+  // Форма записи на консультацию
+  const appointmentForm = document.querySelector('.appointment-form');
+  
+  if (appointmentForm) {
+    appointmentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Сбор данных формы
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Валидация
+      if (!data.name || !data.phone) {
+        showNotification('Пожалуйста, заполните обязательные поля', 'error');
+        return;
+      }
+      
+      // Эмуляция отправки
+      showNotification('Заявка отправлена! Мы свяжемся с вами в течение часа.', 'success');
+      
+      // Очистка формы
+      this.reset();
+      
+      // Прокрутка к подтверждению
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+  
+  // Функция показа уведомлений
+  function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification notification--${type}`;
+    notification.innerHTML = `
+      <div class="notification__content">
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+      </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Анимация появления
+    setTimeout(() => {
+      notification.classList.add('show');
+    }, 10);
+    
+    // Удаление через 5 секунд
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }, 5000);
+  }
+  
+  // Стили для уведомлений
+  const notificationStyles = document.createElement('style');
+  notificationStyles.textContent = `
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      color: white;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.3s ease;
+      max-width: 400px;
+    }
+    
+    .notification.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .notification--success {
+      background: #4caf50;
+    }
+    
+    .notification--error {
+      background: #f44336;
+    }
+    
+    .notification__content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .notification i {
+      font-size: 1.2rem;
+    }
+  `;
+  document.head.appendChild(notificationStyles);
+  
+  // Анимация появления элементов при скролле
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, observerOptions);
+  
+  // Наблюдаем за всеми карточками
+  document.querySelectorAll('.direction-card, .technology-item, .doctor-card').forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Добавляем стили для анимации
+  const animationStyles = document.createElement('style');
+  animationStyles.textContent = `
+    .direction-card,
+    .technology-item,
+    .doctor-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .step {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.6s ease;
+    }
+    
+    .step.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  `;
+  document.head.appendChild(animationStyles);
+  
+  // Наблюдаем за шагами таймлайна
+  document.querySelectorAll('.step').forEach((step, index) => {
+    observer.observe(step);
+  });
+  
+  // Счетчик статистики
+  const statNumbers = document.querySelectorAll('.stat-item__number');
+  const surgeryHero = document.querySelector('.surgery-hero');
+  
+  if (surgeryHero && statNumbers.length > 0) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(surgeryHero);
+  }
+  
+  function animateCounter() {
+    statNumbers.forEach(statNumber => {
+      const target = parseInt(statNumber.textContent);
+      const duration = 2000; // 2 секунды
+      const increment = target / (duration / 16); // 60fps
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        statNumber.textContent = Math.floor(current) + (statNumber.textContent.includes('%') ? '%' : '+');
+      }, 16);
+    });
+  }
+});
