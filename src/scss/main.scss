@@ -1172,3 +1172,612 @@
     }
   }
 }
+
+/* vaccination */
+
+// Переменные
+$primary-color: #2a9d8f;
+$primary-dark: #1d7873;
+$secondary-color: #e9c46a;
+$accent-color: #e76f51;
+$light-color: #f8f9fa;
+$dark-color: #264653;
+$gray-color: #6c757d;
+$gray-light: #e9ecef;
+
+// Миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin gradient-bg($color1, $color2) {
+  background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
+
+// Блок: Заголовок страницы
+.vaccination-page {
+  padding: 3rem 0;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  &__title {
+    font-size: 2.5rem;
+    color: $dark-color;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  &__subtitle {
+    font-size: 1.2rem;
+    color: $gray-color;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Блок: Баннер защиты
+.protection-banner {
+  @include gradient-bg($primary-color, $primary-dark);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  color: white;
+  
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  &__icon {
+    font-size: 3rem;
+    opacity: 0.9;
+  }
+  
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__desc {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+  }
+}
+
+// Блок: Преимущества вакцинации
+.vaccination-benefits {
+  margin-bottom: 4rem;
+  
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 2rem;
+  }
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  @include card-shadow;
+  
+  &__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    @include flex-center;
+    margin: 0 auto 1rem;
+    
+    &--health {
+      background: rgba($accent-color, 0.1);
+      color: $accent-color;
+    }
+    
+    &--safety {
+      background: rgba($primary-color, 0.1);
+      color: $primary-color;
+    }
+    
+    &--community {
+      background: rgba($secondary-color, 0.1);
+      color: darken($secondary-color, 20%);
+    }
+    
+    &--economy {
+      background: rgba(#28a745, 0.1);
+      color: #28a745;
+    }
+  }
+  
+  &__title {
+    font-size: 1.3rem;
+    color: $dark-color;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__text {
+    color: $gray-color;
+    line-height: 1.5;
+  }
+}
+
+// Блок: Схемы вакцинации
+.vaccination-schemes {
+  margin-bottom: 4rem;
+  
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 2rem;
+  }
+}
+
+.scheme-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.scheme-tab {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid $primary-color;
+  background: white;
+  color: $primary-color;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba($primary-color, 0.1);
+  }
+  
+  &--active {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+.scheme-content {
+  display: none;
+  
+  &--active {
+    display: block;
+  }
+}
+
+.scheme-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  @include card-shadow;
+  
+  &__header {
+    @include gradient-bg($primary-color, $primary-dark);
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__title {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  &__badge {
+    background: $accent-color;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  &__body {
+    padding: 2rem;
+  }
+  
+  &__price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $primary-color;
+    text-align: right;
+    margin-top: 1rem;
+  }
+}
+
+.vaccine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vaccine-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 2fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: $gray-light;
+  border-radius: 8px;
+  align-items: center;
+  
+  &__age {
+    font-weight: 600;
+    color: $dark-color;
+  }
+  
+  &__name {
+    font-weight: 600;
+    color: $primary-color;
+  }
+  
+  &__diseases {
+    color: $gray-color;
+    font-size: 0.9rem;
+  }
+}
+
+// Блок: Пакеты вакцинации
+.vaccination-packages {
+  margin-bottom: 4rem;
+  
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 2rem;
+  }
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.package-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  @include card-shadow;
+  position: relative;
+  border: 2px solid transparent;
+  
+  &--basic {
+    border-color: $gray-light;
+  }
+  
+  &--optimal {
+    border-color: $primary-color;
+    transform: scale(1.05);
+    
+    &:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+  }
+  
+  &--premium {
+    border-color: $secondary-color;
+  }
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  &__title {
+    font-size: 1.8rem;
+    color: $dark-color;
+    margin-bottom: 1rem;
+  }
+  
+  &__icon {
+    font-size: 3rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  
+  &__badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: $accent-color;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  &__price {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  &__amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    display: block;
+  }
+  
+  &__period {
+    color: $gray-color;
+    font-size: 0.9rem;
+  }
+  
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid $gray-light;
+      position: relative;
+      padding-left: 1.5rem;
+      
+      &:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  &__feature--disabled {
+    color: $gray-color;
+    text-decoration: line-through;
+    
+    &:before {
+      content: "✗";
+      color: $accent-color;
+    }
+  }
+  
+  &__button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: $primary-color;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    
+    &:hover {
+      background: $primary-dark;
+      color: white;
+    }
+  }
+}
+
+// Блок: FAQ
+.vaccination-faq {
+  margin-bottom: 4rem;
+  
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 2rem;
+  }
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid $gray-light;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  &__question {
+    width: 100%;
+    padding: 1.5rem;
+    background: white;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $dark-color;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.3s ease;
+    
+    &:hover {
+      background: $gray-light;
+    }
+  }
+  
+  &__icon {
+    font-size: 1.2rem;
+    color: $primary-color;
+    transition: transform 0.3s ease;
+  }
+  
+  &__answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    p {
+      padding: 1rem 0;
+      margin: 0;
+      color: $gray-color;
+      line-height: 1.6;
+    }
+  }
+  
+  &.active {
+    .faq-item__icon {
+      transform: rotate(45deg);
+    }
+    
+    .faq-item__answer {
+      max-height: 500px;
+    }
+  }
+}
+
+// Блок: Калькулятор
+.vaccination-calculator {
+  background: $gray-light;
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 4rem;
+  
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 2rem;
+  }
+}
+
+.calculator-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.calculator-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.calculator-label {
+  font-weight: 600;
+  color: $dark-color;
+}
+
+.calculator-select {
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+.calculator-button {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  background: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  
+  &:hover {
+    background: $primary-dark;
+  }
+}
+
+.calculator-result {
+  text-align: center;
+}
+
+.result-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  display: inline-block;
+  @include card-shadow;
+  
+  &__title {
+    font-size: 1.3rem;
+    color: $dark-color;
+    margin-bottom: 1rem;
+  }
+  
+  &__price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__note {
+    color: $gray-color;
+    font-size: 0.9rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .vaccine-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .package-card--optimal {
+    transform: none;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .protection-banner__content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .calculator-form {
+    grid-template-columns: 1fr;
+  }
+}

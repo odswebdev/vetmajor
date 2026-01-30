@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+
+      <!-- Хлебные крошки -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <nav class="breadcrumbs__nav">
+            <a href="#" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">Профилактика</a>
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Вакцинация</span>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Секция с услугами вакцинации -->
+      <section class="vaccination-page">
+        <div class="container">
+          <div class="vaccination-page__header">
+            <h1 class="vaccination-page__title">Вакцинация животных</h1>
+            <p class="vaccination-page__subtitle">Надежная защита от опасных заболеваний</p>
+          </div>
+
+          <!-- Баннер с преимуществами -->
+          <div class="protection-banner">
+            <div class="protection-banner__content">
+              <div class="protection-banner__icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="protection-banner__text">
+                <h3 class="protection-banner__title">Гарантия защиты</h3>
+                <p class="protection-banner__desc">Используем только сертифицированные вакцины с доказанной эффективностью</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Преимущества вакцинации -->
+          <div class="vaccination-benefits">
+            <h2 class="vaccination-benefits__title">Преимущества вакцинации</h2>
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--health">
+                  <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3 class="benefit-card__title">Защита здоровья</h3>
+                <p class="benefit-card__text">Предотвращение опасных инфекционных заболеваний</p>
+              </div>
+              
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--safety">
+                  <i class="fas fa-award"></i>
+                </div>
+                <h3 class="benefit-card__title">Безопасность</h3>
+                <p class="benefit-card__text">Минимальный риск осложнений, индивидуальный подход</p>
+              </div>
+              
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--community">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="benefit-card__title">Защита сообщества</h3>
+                <p class="benefit-card__text">Предотвращение распространения заболеваний</p>
+              </div>
+              
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--economy">
+                  <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h3 class="benefit-card__title">Экономия</h3>
+                <p class="benefit-card__text">Профилактика дешевле лечения заболеваний</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Схемы вакцинации -->
+          <div class="vaccination-schemes">
+            <h2 class="vaccination-schemes__title">Схемы вакцинации</h2>
+            
+            <div class="scheme-tabs">
+              <button class="scheme-tab scheme-tab--active" data-target="cats">Кошки</button>
+              <button class="scheme-tab" data-target="dogs">Собаки</button>
+              <button class="scheme-tab" data-target="rabbits">Грызуны</button>
+            </div>
+
+            <div class="scheme-content scheme-content--active" id="cats">
+              <div class="scheme-card">
+                <div class="scheme-card__header">
+                  <h3 class="scheme-card__title">Комплексная вакцинация кошек</h3>
+                  <span class="scheme-card__badge">Рекомендуется</span>
+                </div>
+                <div class="scheme-card__body">
+                  <div class="vaccine-list">
+                    <div class="vaccine-item">
+                      <span class="vaccine-item__age">8-9 недель</span>
+                      <span class="vaccine-item__name">Nobivac Tricat Trio</span>
+                      <span class="vaccine-item__diseases">Панлейкопения, ринотрахеит, калицивироз</span>
+                    </div>
+                    <div class="vaccine-item">
+                      <span class="vaccine-item__age">12 недель</span>
+                      <span class="vaccine-item__name">Nobivac Tricat Trio + Rabies</span>
+                      <span class="vaccine-item__diseases">Ревакцинация + бешенство</span>
+                    </div>
+                    <div class="vaccine-item">
+                      <span class="vaccine-item__age">Ежегодно</span>
+                      <span class="vaccine-item__name">Nobivac Tricat Trio + Rabies</span>
+                      <span class="vaccine-item__diseases">Ежегодная ревакцинация</span>
+                    </div>
+                  </div>
+                  <div class="scheme-card__price">от 1 500₽</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="scheme-content" id="dogs">
+              <!-- Контент для собак -->
+            </div>
+          </div>
+
+          <!-- Пакеты вакцинации -->
+          <div class="vaccination-packages">
+            <h2 class="vaccination-packages__title">Пакеты вакцинации</h2>
+            
+            <div class="packages-grid">
+              <!-- Базовый пакет -->
+              <div class="package-card package-card--basic">
+                <div class="package-card__header">
+                  <h3 class="package-card__title">Базовый</h3>
+                  <div class="package-card__icon">
+                    <i class="fas fa-shield"></i>
+                  </div>
+                </div>
+                <div class="package-card__price">
+                  <span class="package-card__amount">1 200₽</span>
+                  <span class="package-card__period">за вакцину</span>
+                </div>
+                <ul class="package-card__features">
+                  <li>Осмотр врача</li>
+                  <li>Базовая вакцина</li>
+                  <li>Внесение в ветеринарный паспорт</li>
+                  <li class="package-card__feature--disabled">Чипирование</li>
+                  <li class="package-card__feature--disabled">Анализы перед вакцинацией</li>
+                </ul>
+                <a href="#" class="package-card__button">Выбрать пакет</a>
+              </div>
+
+              <!-- Оптимальный пакет -->
+              <div class="package-card package-card--optimal">
+                <div class="package-card__header">
+                  <h3 class="package-card__title">Оптимальный</h3>
+                  <div class="package-card__icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="package-card__badge">Популярный</div>
+                </div>
+                <div class="package-card__price">
+                  <span class="package-card__amount">2 500₽</span>
+                  <span class="package-card__period">полный комплекс</span>
+                </div>
+                <ul class="package-card__features">
+                  <li>Расширенный осмотр</li>
+                  <li>Комплексная вакцина</li>
+                  <li>Вакцина от бешенства</li>
+                  <li>Чипирование</li>
+                  <li>Консультация по уходу</li>
+                </ul>
+                <a href="#" class="package-card__button">Выбрать пакет</a>
+              </div>
+
+              <!-- Премиум пакет -->
+              <div class="package-card package-card--premium">
+                <div class="package-card__header">
+                  <h3 class="package-card__title">Премиум</h3>
+                  <div class="package-card__icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="package-card__price">
+                  <span class="package-card__amount">4 000₽</span>
+                  <span class="package-card__period">полное обследование</span>
+                </div>
+                <ul class="package-card__features">
+                  <li>Полный осмотр специалиста</li>
+                  <li>Все необходимые вакцины</li>
+                  <li>Анализы перед вакцинацией</li>
+                  <li>Чипирование</li>
+                  <li>Годовая гарантия на вакцинацию</li>
+                </ul>
+                <a href="#" class="package-card__button">Выбрать пакет</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ секция -->
+          <div class="vaccination-faq">
+            <h2 class="vaccination-faq__title">Частые вопросы о вакцинации</h2>
+            
+            <div class="faq-accordion">
+              <div class="faq-item">
+                <button class="faq-item__question">
+                  <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+                  <span>Когда делать первую прививку щенку/котенку?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Первая вакцинация проводится в 8-9 недель, повторная через 3-4 недели. Вакцина от бешенства делается с 12 недель.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-item__question">
+                  <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+                  <span>Нужно ли готовить животное к вакцинации?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>За 10 дней до вакцинации необходимо провести дегельминтизацию. Животное должно быть здоровым, без признаков заболеваний.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-item__question">
+                  <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+                  <span>Какие могут быть реакции на прививку?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Возможны легкая вялость, снижение аппетита в течение 1-2 дней. При сильных реакциях необходимо обратиться к врачу.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-item__question">
+                  <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+                  <span>Как часто нужно повторять вакцинацию?</span>
+                </button>
+                <div class="faq-item__answer">
+                  <p>Большинство вакцин требуют ежегодной ревакцинации для поддержания иммунитета.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Калькулятор вакцинации -->
+          <div class="vaccination-calculator">
+            <h2 class="vaccination-calculator__title">Рассчитайте стоимость вакцинации</h2>
+            <div class="calculator-form">
+              <div class="calculator-field">
+                <label class="calculator-label">Тип животного</label>
+                <select class="calculator-select">
+                  <option value="cat">Кошка</option>
+                  <option value="dog">Собака</option>
+                  <option value="rabbit">Кролик</option>
+                  <option value="ferret">Хорек</option>
+                </select>
+              </div>
+              
+              <div class="calculator-field">
+                <label class="calculator-label">Возраст</label>
+                <select class="calculator-select">
+                  <option value="puppy">Щенок/Котенок (до 1 года)</option>
+                  <option value="adult">Взрослый (1-7 лет)</option>
+                  <option value="senior">Пожилой (старше 7 лет)</option>
+                </select>
+              </div>
+              
+              <div class="calculator-field">
+                <label class="calculator-label">Пакет услуг</label>
+                <select class="calculator-select">
+                  <option value="basic">Базовый</option>
+                  <option value="optimal">Оптимальный</option>
+                  <option value="premium">Премиум</option>
+                </select>
+              </div>
+              
+              <button class="calculator-button">Рассчитать</button>
+            </div>
+            
+            <div class="calculator-result">
+              <div class="result-card">
+                <h3 class="result-card__title">Примерная стоимость</h3>
+                <div class="result-card__price">1 500 - 2 500₽</div>
+                <p class="result-card__note">Точную стоимость определит врач после осмотра</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+  
+  <script src="js/vaccination.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
