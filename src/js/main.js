@@ -436,3 +436,229 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+// castration-sterilization.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Переключение табов в ценах
+  const pricingTabs = document.querySelectorAll('.pricing-tab');
+  const pricingContents = document.querySelectorAll('.pricing-content');
+  
+  pricingTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const animal = this.dataset.animal;
+      
+      pricingTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      
+      pricingContents.forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      document.getElementById(animal).classList.add('active');
+    });
+  });
+  
+  // Аккордеон FAQ
+  const faqQuestions = document.querySelectorAll('.faq-item__question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      
+      // Закрываем другие открытые элементы в этой же категории
+      const parentCategory = faqItem.closest('.faq-category');
+      parentCategory.querySelectorAll('.faq-item.active').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+        }
+      });
+      
+      faqItem.classList.toggle('active');
+    });
+  });
+  
+  // Форма записи
+  const appointmentForm = document.querySelector('.appointment-form');
+  
+  if (appointmentForm) {
+    appointmentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Простая валидация
+      const requiredFields = this.querySelectorAll('[required]');
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.style.borderColor = '#ff6b6b';
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      
+      if (!isValid) {
+        showNotification('Пожалуйста, заполните все обязательные поля', 'error');
+        return;
+      }
+      
+      // Эмуляция отправки
+      showNotification('Заявка отправлена! Мы свяжемся с вами в течение 30 минут.', 'success');
+      this.reset();
+    });
+  }
+  
+  // Функция уведомлений
+  function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `cs-notification cs-notification--${type}`;
+    notification.innerHTML = `
+      <div class="cs-notification__content">
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+      </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Стили для уведомления
+    const styles = `
+      .cs-notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        color: white;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+        max-width: 400px;
+      }
+      
+      .cs-notification.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .cs-notification--success {
+        background: #4caf50;
+      }
+      
+      .cs-notification--error {
+        background: #f44336;
+      }
+      
+      .cs-notification__content {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      
+      .cs-notification i {
+        font-size: 1.2rem;
+      }
+    `;
+    
+    // Добавляем стили, если их еще нет
+    if (!document.querySelector('#notification-styles')) {
+      const styleEl = document.createElement('style');
+      styleEl.id = 'notification-styles';
+      styleEl.textContent = styles;
+      document.head.appendChild(styleEl);
+    }
+    
+    // Показываем уведомление
+    setTimeout(() => {
+      notification.classList.add('show');
+    }, 10);
+    
+    // Убираем через 5 секунд
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }, 5000);
+  }
+  
+  // Анимация появления элементов
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, observerOptions);
+  
+  // Наблюдаем за карточками и блоками
+  document.querySelectorAll('.difference-card, .pricing-card, .recovery-card, .process-step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+  });
+  
+  // Добавляем класс для анимации
+  const animationStyles = document.createElement('style');
+  animationStyles.textContent = `
+    .animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  `;
+  document.head.appendChild(animationStyles);
+  
+  // Анимация статистики
+  const statsSection = document.querySelector('.cs-hero');
+  const statNumbers = document.querySelectorAll('.cs-stat__number');
+  
+  if (statsSection && statNumbers.length > 0) {
+    const statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    statsObserver.observe(statsSection);
+  }
+  
+  function animateStats() {
+    statNumbers.forEach(stat => {
+      const text = stat.textContent;
+      const isPercent = text.includes('%');
+      const isPlus = text.includes('+');
+      const number = parseFloat(text.replace(/[^0-9.]/g, ''));
+      
+      let current = 0;
+      const increment = number / 100;
+      const duration = 2000;
+      const interval = duration / 100;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= number) {
+          current = number;
+          clearInterval(timer);
+        }
+        
+        let display = Math.floor(current);
+        if (isPercent) display += '%';
+        if (isPlus) display += '+';
+        
+        stat.textContent = display;
+      }, interval / 10);
+    });
+  }
+});
