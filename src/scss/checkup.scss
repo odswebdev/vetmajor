@@ -1,16 +1,17 @@
 .service-page,
 .checkup-page {
-  padding: 40px 0 80px;
+  padding: 0px 0 80px;
 
   &__header {
-    text-align: center;
     margin-bottom: 50px;
   }
 
   &__title {
-    font-size: 42px;
+    font-size: 70px;
+    line-height: 93px;
     font-weight: 700;
-    color: #333;
+    color: #241913;
+    text-transform: uppercase;
     margin-bottom: 15px;
   }
 
@@ -290,20 +291,22 @@
 
 // Стили для страницы чек-апа
 .checkup-programs {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
   margin-bottom: 60px;
 }
 
 .checkup-program {
-  background: white;
+  background: #F7DCAE;
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f0f0f0;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
 
   &:hover {
     transform: translateY(-3px);
@@ -315,7 +318,7 @@
     background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
   }
 
-  &__badge {
+ /* &__badge {
     position: absolute;
     top: -12px;
     right: 30px;
@@ -325,28 +328,121 @@
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
+  } */
+
+  &__badge-r1 {
+    background-image: url(../img/ellipse.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20%;
+    bottom: -30%;
+    width: 300px;
+    height: 300px;
+    overflow-y: hidden;
+    z-index: -5;
   }
+
+  &__badge-r2 {
+    background-image: url(../img/rat_mouse.png);
+    background-size: cover;
+    position: absolute;
+    top: 55%;
+    left: auto;
+    right: -48%;
+    width: 271px;
+    height: 196px;
+    z-index: 20;
+    transform: translateX(-80%);
+  }
+
+  &__badge-r3 {
+    background-image: url(../img/rat_cat.png);
+    background-size: cover;
+    position: absolute;
+    top: 62%;
+    left: auto;
+    right: -8%;
+    width: 271px;
+    height: 196px;
+    z-index: 20;
+    transform: translateX(20%);
+  }
+
+  
+  &__badge-r4 {
+    background-image: url(../img/rat_dog.png);
+    background-size: cover;
+    position: relative;
+    top: 15%;
+    left: auto;
+    right: -45%;
+    width: 271px;
+    height: 196px;
+    z-index: 20;
+    transform: translateX(30%);
+  }
+
+  &__badge-r5 {
+    background-image: url(../img/ellipse.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20%;
+    bottom: -30%;
+    width: 300px;
+    height: 300px;
+    overflow-y: hidden;
+    z-index: -5;
+  }
+
+  &__badge-r6 {
+    background-image: url(../img/rat_dog.png);
+    background-size: cover;
+    position: relative;
+    top: 15%;
+    left: auto;
+    right: -45%;
+    width: 271px;
+    height: 196px;
+    z-index: 20;
+    transform: translateX(30%);
+  }
+
+
 
   &__header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
     gap: 20px;
   }
 
   &__title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
+    font-size: 25px;
+    line-height: 31px;
+    font-weight: 500;
+    color: #241913;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 26px;
+    color: #241913;
     margin: 0;
     flex: 1;
   }
 
   &__price {
-    font-size: 28px;
-    font-weight: 700;
-    color: #4a6cf7;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #FF3850;
     white-space: nowrap;
   }
 
