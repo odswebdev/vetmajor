@@ -411,8 +411,6 @@
     transform: translateX(30%);
   }
 
-
-
   &__header {
     display: flex;
     flex-direction: column;
@@ -441,7 +439,7 @@
   &__price {
     font-size: 30px;
     line-height: 36px;
-    font-weight: 600;
+    font-weight: 700;
     color: #FF3850;
     white-space: nowrap;
   }
