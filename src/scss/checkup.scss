@@ -11,8 +11,8 @@
     line-height: 93px;
     font-weight: 700;
     color: #241913;
-    text-transform: uppercase;
     margin-bottom: 15px;
+    text-transform: uppercase;
   }
 
   &__subtitle {
@@ -28,10 +28,9 @@
   margin-bottom: 60px;
 
   &__card {
-    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    background: #F7DCAE;
     border-radius: 16px;
     padding: 40px;
-    border: 1px solid #e6e9ff;
   }
 
   &__card-title {
@@ -102,41 +101,9 @@
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   }
 
-  &--red {
-    border-top-color: #ff4757;
-  }
-
-  &--green {
-    border-top-color: #2ed573;
-  }
-
-  &--blue {
-    border-top-color: #3742fa;
-  }
-
   &__header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-
-  &__icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-
-    &--red {
-      background: #ff4757;
-    }
-
-    &--green {
-      background: #2ed573;
-    }
-
-    &--blue {
-      background: #3742fa;
-    }
   }
 
   &__title {
