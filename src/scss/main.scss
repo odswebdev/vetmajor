@@ -59,6 +59,9 @@
     font-size: 15px;
     background-color: #ffedcb;
     padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   // .hero__advantages
@@ -156,6 +159,8 @@
       display: flex;
       justify-content: center;
       margin-top: 10px;
+      max-width: 100%;
+      width: 80%;
 
       .swiper-pagination-bullet {
         width: 77px;
@@ -800,7 +805,7 @@
     align-items: center;
     transition: all 0.3s ease;
     flex-shrink: 0;
-    border: 2px solid #D0BD98;
+  /*  border: 2px solid #D0BD98; */
 
     &::before {
       content: "";
@@ -1175,10 +1180,10 @@
 /* vaccination */
 
 // Переменные
-$primary-color: #2a9d8f;
-$primary-dark: #1d7873;
+$primary-color: #264653;
+$primary-dark: #162125;
 $secondary-color: #e9c46a;
-$accent-color: #e76f51;
+$accent-color: #ffe039;
 $light-color: #f8f9fa;
 $dark-color: #264653;
 $gray-color: #6c757d;
@@ -1231,11 +1236,11 @@ $gray-light: #e9ecef;
 
 // Блок: Баннер защиты
 .protection-banner {
-  @include gradient-bg($primary-color, $primary-dark);
+  background: #F7DCAE;
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 3rem;
-  color: white;
+  color: #6c757d;
   
   &__content {
     display: flex;
@@ -1251,6 +1256,7 @@ $gray-light: #e9ecef;
   &__title {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    color: #264653;
   }
   
   &__desc {
@@ -1279,7 +1285,7 @@ $gray-light: #e9ecef;
 }
 
 .benefit-card {
-  background: white;
+  background: #F7DCAE;
   border-radius: 10px;
   padding: 2rem;
   text-align: center;
@@ -1295,8 +1301,8 @@ $gray-light: #e9ecef;
     margin: 0 auto 1rem;
     
     &--health {
-      background: rgba($accent-color, 0.1);
-      color: $accent-color;
+      background: rgba(#e76f51, 0.1);
+      color: #e76f51;
     }
     
     &--safety {
@@ -1349,9 +1355,9 @@ $gray-light: #e9ecef;
 
 .scheme-tab {
   padding: 0.75rem 1.5rem;
-  border: 2px solid $primary-color;
-  background: white;
-  color: $primary-color;
+  border: 2px solid #F7DCAE;
+  background: #F7DCAE;
+  color: #6c757d;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
@@ -1359,11 +1365,14 @@ $gray-light: #e9ecef;
   
   &:hover {
     background: rgba($primary-color, 0.1);
+    color: #FFF;
+    border: 2px solid #FFF;
   }
   
   &--active {
-    background: $primary-color;
-    color: white;
+    background: #F7DCAE;
+    color:#6c757d;
+    border: 2px solid #FFF;
   }
 }
 
@@ -1382,7 +1391,7 @@ $gray-light: #e9ecef;
   @include card-shadow;
   
   &__header {
-    @include gradient-bg($primary-color, $primary-dark);
+    background: #F7DCAE;
     padding: 1.5rem;
     color: white;
     display: flex;
@@ -1393,11 +1402,12 @@ $gray-light: #e9ecef;
   &__title {
     font-size: 1.5rem;
     margin: 0;
+    color: #264653;
   }
   
   &__badge {
     background: $accent-color;
-    padding: 0.25rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     border-radius: 15px;
     font-size: 0.875rem;
     font-weight: 600;
@@ -1405,12 +1415,13 @@ $gray-light: #e9ecef;
   
   &__body {
     padding: 2rem;
+    background: #F7DCAE;
   }
   
   &__price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: $primary-color;
+    color: #264653;
     text-align: right;
     margin-top: 1rem;
   }
@@ -1427,7 +1438,9 @@ $gray-light: #e9ecef;
   grid-template-columns: 100px 1fr 2fr;
   gap: 1rem;
   padding: 1rem;
-  background: $gray-light;
+  background: #FFF;
+  border: 1px solid #ccc;
+  opacity: 0.5;
   border-radius: 8px;
   align-items: center;
   
@@ -1463,10 +1476,11 @@ $gray-light: #e9ecef;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  padding-top: 1rem;
 }
 
 .package-card {
-  background: white;
+  background: F7DCAE;
   border-radius: 12px;
   padding: 2rem;
   @include card-shadow;
@@ -1474,11 +1488,11 @@ $gray-light: #e9ecef;
   border: 2px solid transparent;
   
   &--basic {
-    border-color: $gray-light;
+    border-color: $secondary-color;
   }
   
   &--optimal {
-    border-color: $primary-color;
+    border: 2px solid #ccc;
     transform: scale(1.05);
     
     &:hover {
@@ -1508,7 +1522,7 @@ $gray-light: #e9ecef;
     margin-bottom: 1rem;
   }
   
-  &__badge {
+ /* &__badge {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -1518,7 +1532,7 @@ $gray-light: #e9ecef;
     border-radius: 15px;
     font-size: 0.875rem;
     font-weight: 600;
-  }
+  } */
   
   &__price {
     text-align: center;
@@ -1528,7 +1542,7 @@ $gray-light: #e9ecef;
   &__amount {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $primary-color;
+    color: #264653;
     display: block;
   }
   
@@ -1544,7 +1558,7 @@ $gray-light: #e9ecef;
     
     li {
       padding: 0.5rem 0;
-      border-bottom: 1px solid $gray-light;
+   /*   border-bottom: 1px solid $gray-light; */
       position: relative;
       padding-left: 1.5rem;
       
@@ -1572,17 +1586,23 @@ $gray-light: #e9ecef;
     display: block;
     width: 100%;
     padding: 1rem;
-    background: $primary-color;
+    background: #ffedcb;
     color: white;
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     transition: background 0.3s ease;
+    color: #264653;
+    font-family: "Arial";
+    font-size: 18px;
+    max-width: 200px;
+    margin: 0 auto;
     
     &:hover {
-      background: $primary-dark;
-      color: white;
+      background: rgba($primary-color, 0.1);
+      color: #FFF;
+      border: 2px solid #FFF;
     }
   }
 }
@@ -1613,7 +1633,7 @@ $gray-light: #e9ecef;
   &__question {
     width: 100%;
     padding: 1.5rem;
-    background: white;
+   /* background: white; */
     border: none;
     text-align: left;
     font-size: 1.1rem;
@@ -1799,7 +1819,7 @@ $surgery-gray: #6c757d;
 }
 
 @mixin surgery-shadow {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   transition: all 0.3s ease;
 }
 
@@ -1817,7 +1837,7 @@ $surgery-gray: #6c757d;
 
 // Блок: Герой секция хирургии
 .surgery-hero {
-  @include surgery-gradient;
+ /* @include surgery-gradient; */
   color: white;
   padding: 4rem 0;
   position: relative;
@@ -1901,7 +1921,7 @@ $surgery-gray: #6c757d;
 // Блок: Направления хирургии
 .surgery-directions {
   padding: 5rem 0;
-  background: $surgery-light;
+ /* background: $surgery-light; */
 }
 
 .directions-grid {
@@ -1986,7 +2006,7 @@ $surgery-gray: #6c757d;
 // Блок: Технологии
 .surgery-technology {
   padding: 5rem 0;
-  background: white;
+/*  background: white; */
 }
 
 .technology-slider {
@@ -2024,7 +2044,7 @@ $surgery-gray: #6c757d;
 // Блок: Подготовка к операции
 .surgery-preparation {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+ /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
 }
 
 .preparation-steps {
@@ -2052,7 +2072,7 @@ $surgery-gray: #6c757d;
   &::before {
     content: '';
     position: absolute;
-    left: 40px;
+    left: 3%;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -2072,15 +2092,15 @@ $surgery-gray: #6c757d;
   }
   
   &__number {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: white;
-    border: 3px solid $surgery-primary;
+   /* border: 3px solid $surgery-primary; */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     color: $surgery-primary;
     flex-shrink: 0;
@@ -2107,12 +2127,12 @@ $surgery-gray: #6c757d;
 // Блок: Команда хирургов
 .surgery-team {
   padding: 5rem 0;
-  background: white;
+ /* background: white; */
 }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+/*  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   gap: 2rem;
 }
 
@@ -2175,7 +2195,7 @@ $surgery-gray: #6c757d;
 // Блок: Цены на операции
 .surgery-pricing {
   padding: 5rem 0;
-  background: $surgery-light;
+ /* background: $surgery-light; */
 }
 
 .pricing-table {
@@ -2271,7 +2291,7 @@ $surgery-gray: #6c757d;
 }
 
 .pricing-note {
-  background: white;
+ /* background: white; */
   padding: 1.5rem;
   border-radius: 8px;
   @include surgery-shadow;
@@ -2293,7 +2313,7 @@ $surgery-gray: #6c757d;
 // Блок: FAQ
 .surgery-faq {
   padding: 5rem 0;
-  background: white;
+/*  background: white; */
 }
 
 .faq-accordion {
@@ -2310,7 +2330,7 @@ $surgery-gray: #6c757d;
   &__question {
     width: 100%;
     padding: 1.5rem;
-    background: white;
+  /*  background: white; */
     border: none;
     text-align: left;
     font-size: 1.1rem;
@@ -2361,7 +2381,7 @@ $surgery-gray: #6c757d;
 // Блок: Консультация
 .surgery-consultation {
   padding: 5rem 0;
-  background: linear-gradient(135deg, $surgery-primary 0%, $surgery-secondary 100%);
+ /* background: linear-gradient(135deg, $surgery-primary 0%, $surgery-secondary 100%); */
   color: white;
 }
 
@@ -2369,7 +2389,7 @@ $surgery-gray: #6c757d;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: flex-start;
   
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
@@ -2407,7 +2427,7 @@ $surgery-gray: #6c757d;
 }
 
 .consultation-form {
-  background: white;
+ /* background: white; */
   padding: 2rem;
   border-radius: 12px;
   @include surgery-shadow;
@@ -2519,7 +2539,7 @@ $cs-gray: #6c757d;
 }
 
 @mixin cs-card {
-  background: white;
+/*  background: white; */
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -2533,7 +2553,7 @@ $cs-gray: #6c757d;
 
 // Герой секция
 .cs-hero {
-  @include cs-gradient;
+ /* @include cs-gradient; */
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -2577,7 +2597,7 @@ $cs-gray: #6c757d;
 // Различия кастрации и стерилизации
 .cs-differences {
   padding: 5rem 0;
-  background: $cs-light;
+ /* background: $cs-light; */
 }
 
 .differences-grid {
@@ -2678,7 +2698,7 @@ $cs-gray: #6c757d;
 // Таблица времени
 .cs-timing {
   padding: 5rem 0;
-  background: white;
+/*  background: white; */
 }
 
 .timing-table {
@@ -2763,7 +2783,7 @@ $cs-gray: #6c757d;
 // Цены
 .cs-pricing {
   padding: 5rem 0;
-  background: $cs-light;
+/*  background: $cs-light; */
 }
 
 .pricing-tabs {
@@ -2778,7 +2798,7 @@ $cs-gray: #6c757d;
 
 .pricing-tab {
   padding: 1rem 2rem;
-  background: white;
+ /* background: white; */
   border: 2px solid $cs-primary;
   border-radius: 8px;
   display: flex;
@@ -2870,7 +2890,7 @@ $cs-gray: #6c757d;
         content: "✓";
         position: absolute;
         left: 0;
-        color: $cs-success;
+        color: #4a6cf7;
         font-weight: bold;
       }
       
@@ -2899,7 +2919,7 @@ $cs-gray: #6c757d;
 }
 
 .pricing-includes {
-  background: white;
+ /* background: white; */
   padding: 2rem;
   border-radius: 12px;
   margin-top: 3rem;
@@ -2937,7 +2957,7 @@ $cs-gray: #6c757d;
 // Процесс операции
 .cs-process {
   padding: 5rem 0;
-  background: white;
+/*  background: white; */
 }
 
 .process-timeline {
@@ -2945,16 +2965,16 @@ $cs-gray: #6c757d;
   margin: 0 auto;
   position: relative;
   
-  &::before {
+ /* &::before {
     content: '';
     position: absolute;
-    left: 30px;
+    left: 1%;
     top: 0;
     bottom: 0;
     width: 2px;
     background: $cs-primary;
     opacity: 0.3;
-  }
+  } */
 }
 
 .process-step {
@@ -3003,7 +3023,7 @@ $cs-gray: #6c757d;
 // Восстановление
 .cs-recovery {
   padding: 5rem 0;
-  background: $cs-light;
+/*  background: $cs-light; */
 }
 
 .recovery-grid {
@@ -3093,7 +3113,7 @@ $cs-gray: #6c757d;
 // FAQ
 .cs-faq {
   padding: 5rem 0;
-  background: white;
+/*  background: white; */
 }
 
 .faq-categories {
@@ -3127,7 +3147,7 @@ $cs-gray: #6c757d;
     &__question {
       width: 100%;
       padding: 1.25rem;
-      background: white;
+    /*  background: white; */
       border: none;
       text-align: left;
       font-size: 1rem;
@@ -3178,11 +3198,11 @@ $cs-gray: #6c757d;
 // Консультация
 .cs-consultation {
   padding: 5rem 0;
-  background: $cs-light;
+/*  background: $cs-light; */
 }
 
 .consultation-block {
-  background: white;
+ /* background: white; */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
@@ -3196,7 +3216,7 @@ $cs-gray: #6c757d;
 
 .consultation-info {
   padding: 3rem;
-  background: linear-gradient(135deg, $cs-primary 0%, $cs-secondary 100%);
+ /* background: linear-gradient(135deg, $cs-primary 0%, $cs-secondary 100%); */
   color: white;
   
   .consultation-title {
@@ -3254,10 +3274,12 @@ $cs-gray: #6c757d;
     .form-control {
       width: 100%;
       padding: 0.75rem 1rem;
-      border: 2px solid rgba($cs-gray, 0.2);
+      border: 2px solid rgba($cs-gray, 0.1);
       border-radius: 8px;
       font-size: 1rem;
       transition: border-color 0.3s ease;
+      outline: none;
+      background: transparent;
       
       &:focus {
         outline: none;
@@ -3341,5 +3363,707 @@ $cs-gray: #6c757d;
     margin: 0 auto;
     color: #241913;
     margin-bottom: 81px;
+  }
+}
+
+// ======================
+// BASE
+// ======================
+html {
+  font-size: 16px; // 1rem = 16px
+}
+
+// ======================
+// GLOBAL SECTIONS
+// ======================
+.stationary-hero,
+.stationary-services,
+.stationary-conditions,
+.stationary-pricing,
+.stationary-admission,
+.stationary-faq,
+.stationary-booking {
+  padding: 5rem 0;
+
+  @media (max-width: 48rem) {
+    padding: 3rem 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  &__subtitle {
+    color: #64748b;
+    margin-top: 0.6rem;
+  }
+}
+
+// ======================
+// HERO
+// ======================
+.stationary-hero {
+ /* background: linear-gradient(135deg, #4f46e5, #06b6d4); */
+  color: #ffffff;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 800;
+
+    @media (max-width: 48rem) {
+      font-size: 2rem;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 1rem;
+    opacity: 0.9;
+  }
+
+  &__features {
+    display: flex;
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+.stationary-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.8rem;
+  backdrop-filter: blur(0.6rem);
+
+  i {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+}
+
+// ======================
+// SERVICES
+// ======================
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 64rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+ /* background: #ffffff; */
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  box-shadow: 0 0.6rem 1.8rem rgba(0,0,0,0.08);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.12);
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.8rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    margin: 0.7rem 0;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+
+  &__features {
+    margin-top: 0.8rem;
+
+    li {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+      color: #475569;
+    }
+  }
+}
+
+// ======================
+// CONDITIONS
+// ======================
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 64rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.condition-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.4rem;
+ /* background: #ffffff; */
+  border-radius: 1.2rem;
+  box-shadow: 0 0.6rem 1.8rem rgba(0,0,0,0.06);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+
+  &__image {
+    width: 3rem;
+    height: 3rem;
+  /*  background: #eef2ff; */
+    border-radius: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4f46e5;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+}
+
+// ======================
+// PRICING
+// ======================
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 64rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pricing-card {
+ /* background: #ffffff; */
+  border-radius: 1.4rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.08);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+
+  &--recommended {
+    border: 0.15rem solid #4f46e5;
+  }
+
+  &__price {
+    margin: 1.2rem 0;
+
+    .price-amount {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .price-period {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+  }
+
+  &__features li {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.6rem;
+    background: #4f46e5;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background: #4338ca;
+    }
+  }
+}
+
+// ======================
+// FORM
+// ======================
+.stationary-form {
+  max-width: 40rem;
+  margin: 0 auto;
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 40rem) {
+      flex-direction: column;
+    }
+  }
+
+  .form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+
+    &:focus {
+      border-color: #4f46e5;
+      outline: none;
+    }
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: #fff;
+    border: none;
+    border-radius: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+  }
+
+  .form-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: center;
+  }
+}
+
+// ======================
+// ADMISSION (PROCESS)
+// ======================
+.stationary-admission {
+ /* background: #f8fafc; */
+}
+
+.admission-process {
+  text-align: center;
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    margin-top: 0.6rem;
+    color: #64748b;
+  }
+}
+
+.process-steps {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 64rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step {
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.6rem 1.8rem rgba(0,0,0,0.06);
+  text-align: left;
+  position: relative;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-0.4rem);
+  }
+
+  &__number {
+    position: absolute;
+    top: -0.8rem;
+    left: -0.8rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.5rem 1rem rgba(79,70,229,0.3);
+    border: none !important;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+}
+
+// ======================
+// BOOKING FORM
+// ======================
+.stationary-booking {
+ /* background: linear-gradient(135deg, #eef2ff, #f0f9ff); */
+}
+
+.booking-form {
+  max-width: 50rem;
+  margin: 0 auto;
+/*  background: #ffffff; */
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.08);
+
+  @media (max-width: 40rem) {
+    padding: 1.5rem;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    margin-top: 0.5rem;
+    color: #64748b;
+  }
+}
+
+// FORM
+.stationary-form {
+  .form-row {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 40rem) {
+      flex-direction: column;
+    }
+  }
+
+  .form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+      color: #334155;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.6rem;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    transition: 0.2s;
+
+    &:focus {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 0.15rem rgba(79,70,229,0.2);
+      outline: none;
+    }
+  }
+
+  textarea.form-control {
+    resize: none;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: #fff;
+    border: none;
+    border-radius: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+      box-shadow: 0 0.8rem 1.8rem rgba(79,70,229,0.25);
+    }
+  }
+
+  .form-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #64748b;
+  }
+}
+
+// ======================
+// BREADCRUMBS
+// ======================
+.breadcrumbs {
+  padding: 1.5rem 0;
+ /* background: #f8fafc; */
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  &__link {
+    color: #4f46e5;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__separator {
+    color: #94a3b8;
+  }
+
+  &__current {
+    color: #64748b;
+  }
+}
+
+// ======================
+// ARTICLES SECTION
+// ======================
+.articles {
+  padding: 4rem 0;
+
+  &__title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-top: 0.6rem;
+    color: #64748b;
+  }
+
+  &__grid {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 64rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 40rem) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ======================
+// ARTICLE CARD
+// ======================
+.article-card {
+ /* background: #ffffff; */
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 0.6rem 1.8rem rgba(0,0,0,0.08);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.12);
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__image {
+    height: 12rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+  }
+
+  &:hover &__image img {
+    transform: scale(1.08);
+  }
+
+  &__content {
+    padding: 1.2rem;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  &__title {
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__excerpt {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  &__meta {
+    margin-top: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+}
+
+// ======================
+// PAGINATION
+// ======================
+.pagination {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: #475569;
+    background: #f1f5f9;
+    transition: 0.2s;
+
+    svg {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+
+    &:hover {
+      background: #e2e8f0;
+    }
+
+    &--active {
+      background: #4f46e5;
+      color: #fff;
+    }
+  }
+
+  &__dots {
+    padding: 0 0.4rem;
+    color: #94a3b8;
   }
 }
